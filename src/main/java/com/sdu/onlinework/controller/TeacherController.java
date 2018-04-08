@@ -198,7 +198,13 @@ public class TeacherController {
 
         //上传文件
         if(!file.isEmpty()) {
-            String filePath = session.getServletContext().getRealPath("file") + "\\" + fileName;
+            String dirPath = session.getServletContext().getRealPath("file");
+            File dir = new File(dirPath);
+            if(!dir.exists()) {
+                if(!dir.mkdirs())
+                    System.out.println("创建目录失败");
+            }
+            String filePath = dirPath + "\\" + fileName;
 //            System.out.println(filePath);
             file.transferTo(new File(filePath));
         }
