@@ -1,0 +1,15 @@
+a{
+    cursor:pointer;
+}
+li.disabled{
+    pointer-events: none;
+}
+td.Running{
+    color:green;
+}
+td.Ended{
+    color:red;
+}
+td.Schedule{
+    color:blue;
+}
